@@ -12,7 +12,6 @@ const jwt = require("jsonwebtoken");
 const Book = require("./Models/Book");
 const Author = require("./Models/Author");
 const User = require("./Models/User");
-const { resolve } = require("dns");
 
 dotenv.config();
 
@@ -27,8 +26,6 @@ mongoose
   })
   .then(() => console.log("connected to MongoDB"))
   .catch((error) => console.log("error connecting to MongoDB:", error.message));
-
-mongoose.set("debug", true);
 
 const typeDefs = gql`
   type Author {
